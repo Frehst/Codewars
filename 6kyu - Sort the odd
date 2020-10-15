@@ -1,0 +1,10 @@
+def sort_array(source_array):
+
+    for a in range(0, len(source_array)):
+        for b in range(a, len(source_array)):
+            if(source_array[a] % 2 == 1 and source_array[b] % 2 == 1):
+                if(source_array[b] < source_array[a]):
+                    li = source_array[a]
+                    source_array[a] = source_array[b]
+                    source_array[b] = li
+    return source_array
