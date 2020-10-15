@@ -1,0 +1,6 @@
+def repeats(arr):
+    score = 0
+    for a in set(arr):
+        if arr.count(a) == 1 :
+            score += a
+    return score 
