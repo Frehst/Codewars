@@ -1,0 +1,16 @@
+https://www.codewars.com/kata/5bc052f93f43de7054000188/train/python
+
+def solve(a,b):  
+    if a == b or a == "*":
+        return True
+    elif "*" not in a:
+        return False
+    left = a.split("*")
+    prefix = left[0]
+    suffix = left[1]
+    if (prefix == suffix and suffix == b):
+        return False
+    if ((b.startswith(prefix) or prefix == "") and (b.endswith(suffix) or suffix == "")):
+        return True
+    else:
+        return False
