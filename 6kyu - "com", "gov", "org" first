@@ -1,0 +1,23 @@
+https://www.codewars.com/kata/57f21fcd69e09cb0d2000088
+
+def exten(link):
+    ext=link.split('.')[-1]
+    return ext
+
+
+def order_by_domain(addresses):
+    com=[]
+    gov=[]
+    org=[]
+    res=[]
+    for i in addresses:
+        i+=' '
+        if ".com " in i or ".com/" in i:
+            com.append(i[:-1])
+        elif ".gov " in i or ".gov/" in i:
+            gov.append(i[:-1])
+        elif ".org " in i or ".org/" in i:
+            org.append(i[:-1])
+        else:
+            res.append(i[:-1])
+    return sorted(com)+sorted(gov)+sorted(org)+sorted(res,key=exten)
