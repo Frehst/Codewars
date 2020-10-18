@@ -1,0 +1,9 @@
+https://www.codewars.com/kata/541c8630095125aba6000c00/train/python
+
+def digital_root(n):
+    while len(str(n)) != 1:
+        sum = 0
+        for a in str(n):
+            sum += int(a)
+        n = sum
+    return n
