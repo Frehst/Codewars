@@ -1,0 +1,55 @@
+https://www.codewars.com/kata/5a1a76c8a7ad6aa26a0007a0/train/python
+
+def life_path_number(birthdate):
+    birthdate= birthdate.split('-')
+    year = 0
+    month = 0
+    day = 0
+    final_result = 0
+    for a in birthdate[0]:
+        year += int(a)
+    score = year
+    while len(str(score)) != 1:
+            year = score
+            score = 0
+            for a in str(year):
+                score  += int(a)
+            if len(str(score)) == 1:
+                break
+
+
+    for b in birthdate[1]:
+        month += int(b)
+    s = month
+    while len(str(s)) != 1 :
+        month = s
+        s = 0
+        for b in str(month):
+            s += int(b)
+            if len(str(s)) == 1:
+                break
+
+    for c in birthdate[2]:
+        day += int(c)
+    s1 = day
+    while len(str(s1)) != 1:
+        day = s1
+        s1 = 0
+        for c in str(day):
+            s1 += int(c)
+            if len(str(s1)) == 1:
+                break
+    everything = score + s + s1
+
+    for d in str(everything):
+        final_result += int(d)
+    s2 = final_result
+    while len(str(s2)) != 1:
+        final_result = s2
+        s2 = 0
+        for d in str(final_result):
+            s2 += int(d)
+            if len(str(s2)) == 1:
+                break
+    return s2
+
