@@ -1,0 +1,18 @@
+https://www.codewars.com/kata/5f70c55c40b1c90032847588/train/python
+
+from collections import Counter
+
+
+def points(dice: str) -> int:
+    most_common = [c for _, c in Counter(dice).most_common()]
+
+    if most_common == [5]:
+        return 50
+    elif most_common == [4, 1]:
+        return 40
+    elif most_common == [3, 2]:
+        return 30
+    elif ''.join(sorted(dice)) in '123456 13456':
+        return 20
+
+    return 0
