@@ -1,0 +1,22 @@
+https://www.codewars.com/kata/5541f58a944b85ce6d00006a/train/python
+
+def Fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a+b
+    return a
+def productFib(n):
+    value = 0
+    x1 = 0
+    x2=0
+    x=0
+    if n == 0:
+        return [0,1,True]
+    while value < n :
+        x += 1
+        x1 = Fibonacci(x)
+        x2 = Fibonacci(x + 1)
+        value = x1 * x2
+    if value == n:
+        return [x1,x2,True]
+    return [x1,x2,False]
