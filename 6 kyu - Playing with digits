@@ -1,0 +1,7 @@
+https://www.codewars.com/kata/5552101f47fc5178b1000050/train/python
+
+def dig_pow(n, p):
+    string_sum = str(n)
+    all = sum([int(string_sum[i]) ** (p + i) for i in range(len(string_sum))])
+
+    return all / n if (all % n) == 0 else -1
