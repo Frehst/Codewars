@@ -1,0 +1,13 @@
+https://www.codewars.com/kata/54a91a4883a7de5d7800009c/train/python
+
+import re
+
+
+def increment_string(s):
+    num = re.findall(r'\d+', s)
+    if num:
+        s_num = num[-1]
+        s = s.rsplit(s_num, 1)[0]
+        number = str(int(s_num) + 1)
+        return s + '0' * (len(s_num) - len(number)) + number
+    return s + '1'
