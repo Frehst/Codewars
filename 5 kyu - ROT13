@@ -1,0 +1,54 @@
+https://www.codewars.com/kata/530e15517bc88ac656000716/train/python
+
+# FIRST answer
+def rot(message):
+    result = ""
+    if message:
+        for char in message:
+            if 65 <= ord(char) <= 90 or 97 <= ord(char) <= 122:
+                if 65 <= ord(char) <= 90:
+                    # capitlized case
+                    if ord(char) + 13 > 90:
+                        char = chr(ord(char) + 13 - 90 + 65 - 1)
+                    else:
+                        char = chr(ord(char) + 13)
+                else:
+                    # lowercase
+                    if ord(char) + 13 > 122:
+                        char = chr(ord(char) + 13 - 122 + 97 - 1)
+                    else:
+                        char = chr(ord(char) + 13)
+            else:
+                pass
+            result += char
+    return result
+    
+    #SECOND answer
+    
+    def rot1(message):
+    string = 'abcdefghijklmnopqrstuvwxyz'
+    s = string.upper()
+    l = []
+    print(string[2])
+    for a in message:
+        if a in string:
+            if string.index(a) < 13:
+                score = string.index(a) +13
+                l.append(string[score])
+            else:
+                score = string.index(a) - 13
+                l.append(string[score])
+        elif a in s:
+            if s.index(a) < 13:
+                score = s.index(a) +13
+                l.append(string[score])
+            else:
+                score = s.index(a) - 13
+                l.append(s[score])
+    return ''.join(l)
+
+# Illegal answer
+
+import codecs
+def rot13(message):
+    return codecs.encode(message,'rot_13')
