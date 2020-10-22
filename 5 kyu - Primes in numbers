@@ -1,0 +1,40 @@
+https://www.codewars.com/kata/54d512e62a5e54c96200019e
+
+def primeFactors(n):
+    l = []
+    l1 = []
+    x = 2
+    while n / x != 1 :
+        if is_prime(x) and n % x == 0 :
+            new = n / x
+            l.append(x)
+            n = new
+        else:
+            x += 1
+    l.append(x)
+    for a in sorted(set(l)):
+        amount = l.count(a)
+        if amount == 1 :
+            all = '({})'.format(a)
+            l1.append(all)
+        else:
+            a = (('{}' + '**' + '{}')).format(a,amount)
+            l1.append('({})'.format(a))
+    return ''.join(l1)
+# def is_prime(n):
+#
+#     return n > 1 and all(n % i for i in range(2, int(n ** 0.5) + 1))
+def is_prime(num):
+
+    if num ==2:
+        return True
+
+    for i in range(2, num):
+        if (num % i) == 0:
+            return False
+        else:
+            return True
+    else:
+        return False
+
+
