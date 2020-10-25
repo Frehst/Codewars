@@ -1,0 +1,6 @@
+https://www.codewars.com/kata/551dd1f424b7a4cdae0001f0/train/python
+
+def who_is_next(names, r):    
+    while r > len(names):
+        r = (r - len(names)+1) // 2
+    return names[r-1]
