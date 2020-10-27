@@ -1,0 +1,15 @@
+https://www.codewars.com/kata/525c65e51bf619685c000059/train/python
+
+def cakes(recipe, available):
+    l = []
+    l1 = []
+    if len(recipe) > len(available):
+        return 0 
+    for key in (recipe.keys() & available.keys()):
+        l.append(key)
+
+    for a in l:
+        score = available[a]//recipe[a]
+        l1.append(score)
+    answer = sorted(l1)
+    return answer[0]
