@@ -1,0 +1,25 @@
+
+
+def primes(n):
+    n += 1
+    s = [True] * n
+    for i in range(3,int(n**0.5)+1,2):
+        if s[i]:
+            s[i*i::2*i]=[False]*((n-i*i-1)//(2*i)+1)
+    return [2] + [i for i in range(3,n,2) if s[i]]
+
+
+def decomp(n):
+    l = []
+    for p in primes(n):
+        rest = n
+        s = 0
+        while rest >0:
+            j = rest // p
+            s += j
+            rest = j
+        if s > 1:
+            l.append(f'{p}^{s}')
+        else:
+            l.append(str(p))
+    return ' * '.join(l)
