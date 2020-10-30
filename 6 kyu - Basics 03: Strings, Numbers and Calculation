@@ -1,0 +1,10 @@
+https://www.codewars.com/kata/56b5dc75d362eac53d000bc8/train/python
+
+def calculate_string(st):
+    sign = '-+/*.'
+    l = []
+    for a in st:
+        if a.isdigit() or a in sign:
+            l.append(a)
+    string = ''.join(l)
+    return str(int(round(eval((string)),0)))
