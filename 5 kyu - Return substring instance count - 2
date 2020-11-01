@@ -1,0 +1,14 @@
+https://www.codewars.com/kata/52190daefe9c702a460003dd/train/python
+
+def search_substr(full_text, search_text, allow_overlap=True):
+    if len(search_text) == 0  or len(full_text) == 0 :
+        return 0
+    if len(search_text) and len(full_text) != 0 and allow_overlap == True :
+        results = 0
+        sub_len = len(search_text)
+        for i in range(len(full_text)):
+            if full_text[i:i + sub_len] == search_text:
+                results += 1
+        return results
+    elif allow_overlap == False:
+        return full_text.count(search_text)
